@@ -68,17 +68,30 @@ The walk navigates the intersections between these structures.
 
 ---
 
-# Geometric Interpretation
+# Example
 
-The lattice behaves visually more like:
+For:
 
-* a rotated square grid,
-* diamond neighborhoods,
-* or a rhomboid geometry,
+$$
+P = 31
+$$
 
-than a standard Cartesian coordinate system.
+The walk becomes:
 
-The walk oscillates around the target integer while progressively reducing the active odd slope family.
+```text
+(35,2)  -> +4
+(27,6)  -> -4
+(33,8)  -> +2
+(13,12) -> slope 1 reached
+```
+
+No exact collision occurred before reaching slope 1.
+
+Therefore:
+
+```text
+31 is prime
+```
 
 ---
 
@@ -152,33 +165,6 @@ without collision, the number is declared prime.
 
 ---
 
-# Example
-
-For:
-
-$$
-P = 31
-$$
-
-The walk becomes:
-
-```text
-(35,2)  -> +4
-(27,6)  -> -4
-(33,8)  -> +2
-(13,12) -> slope 1 reached
-```
-
-No exact collision occurred before reaching slope 1.
-
-Therefore:
-
-```text
-31 is prime
-```
-
----
-
 # Experimental Status
 
 Current brute-force validation produced no known counterexamples up to:
@@ -202,31 +188,6 @@ The project should currently be considered:
 * experimental,
 * exploratory,
 * and conjectural.
-
----
-
-# Computational Motivation
-
-The primary motivation is reducing the operational cost per step.
-
-The walk avoids repeated modular division inside the core loop and instead uses:
-
-* incremental updates,
-* local transitions,
-* and discrete geometry.
-
-Potential advantages:
-
-* low arithmetic cost,
-* cache locality,
-* simple integer operations,
-* low branching complexity.
-
-Potential weaknesses:
-
-* unknown worst-case behavior,
-* no formal proof,
-* possible undiscovered counterexamples.
 
 ---
 
@@ -277,4 +238,5 @@ Use at your own risk.
 ---
 
 # Author
+
 Razolayer
