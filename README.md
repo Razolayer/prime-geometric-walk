@@ -277,5 +277,4 @@ Use at your own risk.
 ---
 
 # Author
-
-Ariel Lugones
+Razolayer
